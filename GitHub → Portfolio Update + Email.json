@@ -1,0 +1,147 @@
+{
+  "name": "GitHub → Portfolio Update + Email",
+  "nodes": [
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "owner": {
+          "__rl": true,
+          "value": "saniyasv",
+          "mode": "list",
+          "cachedResultName": "saniyasv",
+          "cachedResultUrl": "https://github.com/saniyasv"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "Saniya-Portfolio",
+          "mode": "list",
+          "cachedResultName": "Saniya-Portfolio",
+          "cachedResultUrl": "https://github.com/saniyasv/Saniya-Portfolio"
+        },
+        "events": [
+          "push"
+        ],
+        "options": {}
+      },
+      "type": "n8n-nodes-base.githubTrigger",
+      "typeVersion": 1,
+      "position": [
+        -240,
+        0
+      ],
+      "id": "27d2d94e-8d97-4ee4-a2da-c4575563fb80",
+      "name": "Github Trigger",
+      "webhookId": "559d1dee-fc7c-4338-89b6-46a15bfcc4fd",
+      "credentials": {
+        "githubOAuth2Api": {
+          "id": "pkTBrkH64N14cJvv",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "resource": "file",
+        "operation": "edit",
+        "owner": {
+          "__rl": true,
+          "value": "saniyasv",
+          "mode": "list",
+          "cachedResultName": "saniyasv",
+          "cachedResultUrl": "https://github.com/saniyasv"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "Saniya-Portfolio",
+          "mode": "list",
+          "cachedResultName": "Saniya-Portfolio",
+          "cachedResultUrl": "https://github.com/saniyasv/Saniya-Portfolio"
+        },
+        "filePath": "resume.json",
+        "fileContent": "={\n  \"name\": \"Saniya Susan Varkey\",\n  \"title\": \"B.Tech Computer Science Student\",\n  \"email\": \"saniyasusanvarkey@gmail.com\",\n  \"skills\": [\"Python\", \"Java\",\"C\", \"Basics of n8n\"],\n  \"projects\": [\n    {\n      \"name\": \"GitHub Email Automation\",\n      \"description\": \"Sends email when GitHub repo is updated\",\n      \"lastUpdated\": \"Updated automatically via n8n\"\n    }\n  ]\n}\n\n",
+        "commitMessage": "Update resume.json automatically"
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        32,
+        0
+      ],
+      "id": "7093dffc-a5b9-4565-a9dd-c95f11c32bad",
+      "name": "Edit a file",
+      "webhookId": "f6d73849-d89b-47e6-959d-afa9448cff0d",
+      "credentials": {
+        "githubOAuth2Api": {
+          "id": "pkTBrkH64N14cJvv",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "saniyasusanvarkey@gmail.com",
+        "subject": "Portfolio Updated Automatically 🚀",
+        "message": "Hi Saniya, Your GitHub portfolio was updated. resume.json has been modified automatically using n8n. Great job! 🎉",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        304,
+        0
+      ],
+      "id": "a9978a65-a55d-4fe7-b99e-b4c1afd324f3",
+      "name": "Send a message",
+      "webhookId": "11ec2bb8-b656-4809-8224-66cfb32ed661",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "nfsQuQriBZolc9Su",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Github Trigger": {
+      "main": [
+        [
+          {
+            "node": "Edit a file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit a file": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false
+  },
+  "versionId": "27045de5-d143-4a90-8b86-616465e1a5fa",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "2e122d5857992e5bb4502abb5b918eae76a8cd1ac9c3ee056c3eacc76964058a"
+  },
+  "id": "Y5AZGquIC3vmJ9zP",
+  "tags": []
+}
