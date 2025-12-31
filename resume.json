@@ -1,13 +1,1 @@
-{
-  "name": "Saniya Susan Varkey",
-  "title": "Computer Science Student",
-  "email": "saniyasusanvarkey@gmail.com",
-  "skills": ["Python", "Java", "C","Basics of n8n"],
-  "projects": [
-    {
-      "name": "GitHub Email Automation",
-      "description": "Sends email when GitHub repo is updated",
-      "lastUpdated": "Not updated yet"
-    }
-  ]
-}
+{   "name": "Saniya Susan",   "title": "B.Tech Computer Science Student",   "email": "saniyasusan@gmail.com",   "skills": ["Python", "Java", "Basics of n8n"],   "projects": [     {       "name": "GitHub Email Automation",       "description": "Sends email when GitHub repo is updated",      "lastUpdated": "Updated via n8n on 31-12-2025"     }   ] }
