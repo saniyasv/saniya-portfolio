@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Saniya Susan | Portfolio</title>
+</head>
+<body>
+
+<h1>Saniya Susan Varkey</h1>
+<p>Aspiring Software Engineer</p>
+
+
+<h2>Skills</h2>
+<ul id="skills"></ul>
+
+<h2>Projects</h2>
+<ul id="projects"></ul>
+
+<script>
+fetch('resume.json')
+  .then(response => response.json())
+  .then(data => {
+    const skillsList = document.getElementById('skills');
+    data.skills.forEach(skill => {
+      const li = document.createElement('li');
+      li.textContent = skill;
+      skillsList.appendChild(li);
+    });
+
+    const projectList = document.getElementById('projects');
+    data.projects.forEach(project => {
+      const li = document.createElement('li');
+      li.textContent = project.name + " - " + project.lastUpdated;
+      projectList.appendChild(li);
+    });
+  });
+</script>
+
+</body>
+</html>
