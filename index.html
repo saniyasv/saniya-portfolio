@@ -4,27 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saniya Susan | Creative Portfolio</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
     <style>
-        /* --- RESET & BASE STYLES --- */
+        /* --- RESET & GLOBAL --- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            cursor: none !important; /* Disables default cursor for our custom one */
+            cursor: none !important; /* Hides default cursor */
         }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'Inter', sans-serif;
             transition: background-color 0.5s ease, color 0.5s ease;
             overflow-x: hidden;
-            line-height: 1.6;
             background: #fafafa;
             color: #1a1a1a;
+            line-height: 1.6;
         }
 
         body.dark-mode {
@@ -32,7 +36,7 @@
             color: #fafafa;
         }
 
-        /* --- CUSTOM CURSOR --- */
+        /* --- CUSTOM CURSOR SYSTEM --- */
         .cursor-dot {
             position: fixed;
             width: 8px;
@@ -54,13 +58,31 @@
             pointer-events: none;
             z-index: 99998;
             transform: translate(-50%, -50%);
-            transition: width 0.3s, height 0.3s, transform 0.15s ease-out;
+            transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+        }
+
+        .cursor-trail {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: rgba(102, 126, 234, 0.4);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 99997;
+            transform: translate(-50%, -50%);
+            animation: trailFade 0.7s ease-out forwards;
+        }
+
+        @keyframes trailFade {
+            0% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+            100% { opacity: 0; transform: translate(-50%, -50%) scale(0.1); }
         }
 
         body.dark-mode .cursor-dot { background: #a78bfa; }
         body.dark-mode .cursor-ring { border-color: #a78bfa; }
+        body.dark-mode .cursor-trail { background: rgba(167, 139, 250, 0.4); }
 
-        /* --- BACKGROUND ANIMATION --- */
+        /* --- BACKGROUND ELEMENTS --- */
         .animated-background {
             position: fixed;
             inset: 0;
@@ -71,17 +93,24 @@
         .gradient-orb {
             position: absolute;
             border-radius: 50%;
-            filter: blur(120px);
-            opacity: 0.4;
-            animation: float 25s infinite alternate ease-in-out;
+            filter: blur(100px);
+            opacity: 0.3;
+            animation: float 20s infinite alternate ease-in-out;
         }
 
-        .orb-1 { width: 500px; height: 500px; background: #667eea; top: -10%; left: -10%; }
-        .orb-2 { width: 600px; height: 600px; background: #f093fb; bottom: -10%; right: -10%; animation-delay: -5s; }
+        .orb-1 { 
+            width: 500px; height: 500px; 
+            background: #667eea; top: -10%; left: -10%; 
+        }
+        .orb-2 { 
+            width: 600px; height: 600px; 
+            background: #f093fb; bottom: -10%; right: -10%; 
+            animation-delay: -5s; 
+        }
 
         @keyframes float {
             0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(150px, 100px) scale(1.2); }
+            100% { transform: translate(80px, 40px) scale(1.1); }
         }
 
         /* --- NAVIGATION --- */
@@ -94,18 +123,30 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+            backdrop-filter: blur(12px);
         }
 
-        .logo { 
-            font-size: 22px; 
-            font-weight: 900; 
-            letter-spacing: 2px;
-            background: linear-gradient(90deg, #667eea, #764ba2); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
+        .logo {
+            font-weight: 900;
+            font-size: 24px;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
+
+        .nav-link {
+            text-decoration: none;
+            color: inherit;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .nav-link:hover { opacity: 1; }
 
         /* --- HERO SECTION --- */
         .hero {
@@ -119,36 +160,43 @@
         }
 
         .welcome-badge {
-            padding: 8px 20px;
+            padding: 10px 24px;
             background: rgba(102, 126, 234, 0.1);
             border: 1px solid rgba(102, 126, 234, 0.2);
             border-radius: 50px;
             font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 25px;
-            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 24px;
             letter-spacing: 1px;
         }
 
-        .name-line {
+        .hero h1 {
             font-size: clamp(3.5rem, 12vw, 8rem);
             font-weight: 900;
             line-height: 0.9;
             margin-bottom: 20px;
-            letter-spacing: -3px;
+            letter-spacing: -4px;
         }
 
-        .tagline {
-            font-size: 1.2rem;
+        .hero p {
             max-width: 600px;
-            opacity: 0.8;
-            margin-bottom: 40px;
+            font-size: 1.1rem;
+            opacity: 0.7;
         }
 
         /* --- PROJECTS SECTION --- */
-        section { padding: 100px 8%; }
-        
-        .section-header { text-align: center; margin-bottom: 80px; }
+        section {
+            padding: 120px 8%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 60px;
+            letter-spacing: -1px;
+        }
 
         .projects-grid {
             display: grid;
@@ -157,31 +205,43 @@
         }
 
         .project-card {
-            padding: 50px 40px;
+            padding: 45px;
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(102, 126, 234, 0.15);
             border-radius: 32px;
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(10px);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-decoration: none;
             color: inherit;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
         }
 
         .project-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            border-color: #667eea;
+            transform: translateY(-12px);
             background: rgba(102, 126, 234, 0.08);
-            box-shadow: 0 30px 60px rgba(102, 126, 234, 0.15);
+            border-color: #667eea;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
-        .project-icon { font-size: 48px; margin-bottom: 25px; }
-        .project-title { font-size: 24px; font-weight: 800; margin-bottom: 12px; }
-        .project-desc { font-size: 15px; opacity: 0.7; margin-bottom: 20px; line-height: 1.5; }
+        .project-icon {
+            font-size: 45px;
+            margin-bottom: 25px;
+        }
 
-        /* --- THEME TOGGLE & BUTTONS --- */
+        .project-card h3 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            font-size: 15px;
+            opacity: 0.7;
+            line-height: 1.6;
+        }
+
+        /* --- THEME TOGGLE --- */
         .theme-toggle {
             position: fixed;
             bottom: 40px;
@@ -192,31 +252,22 @@
             background: #1a1a1a;
             color: white;
             border: none;
+            font-size: 22px;
+            z-index: 1001;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
-            z-index: 1001;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s;
         }
 
-        body.dark-mode .theme-toggle { background: #fafafa; color: #1a1a1a; }
         .theme-toggle:active { transform: scale(0.9); }
+        body.dark-mode .theme-toggle { background: #ffffff; color: #000000; }
 
-        .btn-main {
-            padding: 15px 35px;
-            background: #1a1a1a;
-            color: white;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: 0.3s;
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 4rem; }
+            section { padding: 80px 5%; }
         }
-
-        body.dark-mode .btn-main { background: #fafafa; color: #1a1a1a; }
-        .btn-main:hover { opacity: 0.9; transform: translateY(-3px); }
-
     </style>
 </head>
 <body>
@@ -231,51 +282,45 @@
 
     <nav>
         <div class="logo">SANIYA SUSAN</div>
-        <a href="https://github.com/saniyasv" class="btn-main" style="padding: 10px 20px; font-size: 14px;">GitHub ↗</a>
+        <a href="https://github.com/saniyasv" class="nav-link" target="_blank">GitHub ↗</a>
     </nav>
 
     <button class="theme-toggle" id="theme-btn">🌙</button>
 
     <div class="hero">
-        <div class="welcome-badge">Software Developer & AI Enthusiast ⚡</div>
-        <h1 class="name-line">Designing <br> The Future.</h1>
-        <p class="tagline">Passionate about building intelligent systems, automation, and user-centric web applications.</p>
-        <a href="#projects" class="btn-main">Explore My Work ↓</a>
+        <div class="welcome-badge">SOFTWARE DEVELOPER & DESIGNER</div>
+        <h1>Digital <br> Architect.</h1>
+        <p>I build high-performance web applications and intelligent systems that bridge the gap between complex code and intuitive design.</p>
     </div>
 
     <section id="projects">
-        <div class="section-header">
-            <h2 style="font-size: 3rem; font-weight: 900; letter-spacing: -2px;">Recent Work</h2>
-        </div>
-
+        <h2 class="section-title">Featured Projects</h2>
         <div class="projects-grid">
-            <a href="https://github.com/saniyasv/SkyPulse" class="project-card">
+            
+            <a href="https://github.com/saniyasv/SkyPulse" class="project-card" target="_blank">
                 <div class="project-icon">🌦️</div>
-                <h3 class="project-title">SkyPulse</h3>
-                <p class="project-desc">A high-precision weather application that fetches real-time data on wind, humidity, visibility, and pressure.</p>
-                <span style="font-weight: 700; color: #667eea;">View Repo →</span>
+                <h3>SkyPulse</h3>
+                <p>A sophisticated weather tracking dashboard utilizing live API data to visualize global atmospheric conditions with precision.</p>
             </a>
 
-            <a href="https://github.com/saniyasv" class="project-card">
+            <a href="https://github.com/saniyasv" class="project-card" target="_blank">
                 <div class="project-icon">🎟️</div>
-                <h3 class="project-title">Event System</h3>
-                <p class="project-desc">A robust platform for managing event registrations, attendee tracking, and seamless automated workflows.</p>
-                <span style="font-weight: 700; color: #667eea;">View Repo →</span>
+                <h3>Event Hub</h3>
+                <p>A full-stack management solution designed for seamless event registration, ticketing, and real-time attendance analytics.</p>
             </a>
 
-            <a href="https://github.com/saniyasv" class="project-card">
+            <a href="https://github.com/saniyasv" class="project-card" target="_blank">
                 <div class="project-icon">🤖</div>
-                <h3 class="project-title">AI Chatbot</h3>
-                <p class="project-desc">Conversational AI built to handle natural language processing and provide real-time intelligent responses.</p>
-                <span style="font-weight: 700; color: #667eea;">View Repo →</span>
+                <h3>Nexus AI</h3>
+                <p>An advanced Natural Language Processing chatbot capable of multi-turn conversations and context-aware assistance.</p>
             </a>
 
-            <a href="https://github.com/saniyasv" class="project-card">
+            <a href="https://github.com/saniyasv" class="project-card" target="_blank">
                 <div class="project-icon">📧</div>
-                <h3 class="project-title">AI Email Sender</h3>
-                <p class="project-desc">An automated communication engine that uses AI to personalize and scale high-volume email outreach.</p>
-                <span style="font-weight: 700; color: #667eea;">View Repo →</span>
+                <h3>MailGenie</h3>
+                <p>An automated communication engine that leverages AI to generate and send personalized bulk emails with high deliverability.</p>
             </a>
+
         </div>
     </section>
 
@@ -284,49 +329,62 @@
         const ring = document.querySelector('.cursor-ring');
         const themeBtn = document.getElementById('theme-btn');
 
-        // Mouse Move Listener
+        // --- 1. SMOOTH CURSOR TRACKING ---
         document.addEventListener('mousemove', (e) => {
-            dot.style.left = e.clientX + 'px';
-            dot.style.top = e.clientY + 'px';
-            
-            // Adds a small delay to the ring for a "liquid" feel
+            const x = e.clientX;
+            const y = e.clientY;
+
+            // Dot follows mouse instantly
+            dot.style.left = `${x}px`;
+            dot.style.top = `${y}px`;
+
+            // Ring follows with a "lag" for a premium feel
             ring.animate({
-                left: `${e.clientX}px`,
-                top: `${e.clientY}px`
+                left: `${x}px`,
+                top: `${y}px`
             }, { duration: 500, fill: "forwards" });
+
+            // --- 2. TRAIL EFFECT ---
+            // Only create trail every 2 movements to save performance
+            if (Math.random() > 0.5) {
+                const trail = document.createElement('div');
+                trail.className = 'cursor-trail';
+                trail.style.left = `${x}px`;
+                trail.style.top = `${y}px`;
+                document.body.appendChild(trail);
+                
+                // Remove element after animation finishes
+                setTimeout(() => trail.remove(), 700);
+            }
         });
 
-        // Hover Effect for interactive elements
-        const targets = document.querySelectorAll('a, button, .project-card');
-        targets.forEach(target => {
-            target.addEventListener('mouseenter', () => {
-                ring.style.width = '70px';
-                ring.style.height = '70px';
+        // --- 3. INTERACTIVE HOVER STATE ---
+        const interactiveElements = document.querySelectorAll('a, button, .project-card');
+        
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                ring.style.width = '80px';
+                ring.style.height = '80px';
                 ring.style.backgroundColor = 'rgba(102, 126, 234, 0.1)';
             });
-            target.addEventListener('mouseleave', () => {
+            el.addEventListener('mouseleave', () => {
                 ring.style.width = '40px';
                 ring.style.height = '40px';
                 ring.style.backgroundColor = 'transparent';
             });
         });
 
-        // Dark Mode Logic
+        // --- 4. THEME TOGGLE LOGIC ---
         themeBtn.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
-            themeBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+            const isDark = document.body.classList.contains('dark-mode');
+            themeBtn.textContent = isDark ? '☀️' : '🌙';
         });
 
-        // Add "scroll reveal" effect to cards
-        window.addEventListener('scroll', () => {
-            const cards = document.querySelectorAll('.project-card');
-            cards.forEach(card => {
-                const cardTop = card.getBoundingClientRect().top;
-                if(cardTop < window.innerHeight - 100) {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }
-            });
+        // Initial setup for the ring position
+        window.addEventListener('load', () => {
+            ring.style.left = '50%';
+            ring.style.top = '50%';
         });
     </script>
 </body>
