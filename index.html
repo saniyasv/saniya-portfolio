@@ -2132,6 +2132,8 @@
                 }
             });
 
+<h1>Saniya Susan Varkey</h1>
+<p>Aspiring Software Engineer</p>
             if (isOverName && closestLetter) {
                 const rect = closestLetter.getBoundingClientRect();
                 const centerX = rect.left + rect.width / 2;
@@ -2199,6 +2201,7 @@
             });
         });
 
+
         const skillBars = document.querySelectorAll('.skill-bar-fill');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -2209,9 +2212,10 @@
             });
         }, { threshold: 0.5 });
 
+
         skillBars.forEach(bar => observer.observe(bar));
 
-        document.getElementById('contactForm').addEventListener('submit', (e) => {
+           document.getElementById('contactForm').addEventListener('submit', (e) => {
             e.preventDefault();
             alert('✨ Thank you for your message! I will get back to you soon.');
             e.target.reset();
