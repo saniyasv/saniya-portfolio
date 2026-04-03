@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saniya Susan - Creative Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -54,7 +56,7 @@
 
         body .cursor-dot {
             background: #000000;
-            box-shadow: 
+            box-shadow:
                 0 0 0 2px rgba(0, 0, 0, 0.1),
                 0 0 20px rgba(102, 126, 234, 0.5),
                 0 0 40px rgba(102, 126, 234, 0.3);
@@ -62,7 +64,7 @@
 
         body.dark-mode .cursor-dot {
             background: #ffffff;
-            box-shadow: 
+            box-shadow:
                 0 0 0 2px rgba(255, 255, 255, 0.3),
                 0 0 20px rgba(167, 139, 250, 0.6),
                 0 0 40px rgba(167, 139, 250, 0.4);
@@ -135,6 +137,7 @@
                 opacity: 0.8;
                 transform: scale(1) translateY(0);
             }
+
             100% {
                 opacity: 0;
                 transform: scale(0.3) translateY(10px);
@@ -157,6 +160,7 @@
                 opacity: 1;
                 transform: scale(1) translateY(0);
             }
+
             100% {
                 opacity: 0;
                 transform: scale(0.2) translateY(20px);
@@ -221,38 +225,50 @@
         }
 
         @keyframes float1 {
-            0%, 100% { 
-                transform: translate(0, 0) scale(1); 
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
             }
-            33% { 
-                transform: translate(100px, -100px) scale(1.1); 
+
+            33% {
+                transform: translate(100px, -100px) scale(1.1);
             }
-            66% { 
-                transform: translate(-50px, 80px) scale(0.9); 
+
+            66% {
+                transform: translate(-50px, 80px) scale(0.9);
             }
         }
 
         @keyframes float2 {
-            0%, 100% { 
-                transform: translate(0, 0) scale(1); 
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
             }
-            33% { 
-                transform: translate(-80px, 120px) scale(1.15); 
+
+            33% {
+                transform: translate(-80px, 120px) scale(1.15);
             }
-            66% { 
-                transform: translate(60px, -90px) scale(0.95); 
+
+            66% {
+                transform: translate(60px, -90px) scale(0.95);
             }
         }
 
         @keyframes float3 {
-            0%, 100% { 
-                transform: translate(0, 0) scale(1); 
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
             }
-            33% { 
-                transform: translate(90px, -80px) scale(1.1); 
+
+            33% {
+                transform: translate(90px, -80px) scale(1.1);
             }
-            66% { 
-                transform: translate(-70px, 100px) scale(0.9); 
+
+            66% {
+                transform: translate(-70px, 100px) scale(0.9);
             }
         }
 
@@ -276,17 +292,22 @@
         }
 
         @keyframes particleFloat {
-            0%, 100% { 
+
+            0%,
+            100% {
                 transform: translateY(0) translateX(0);
                 opacity: 0;
             }
+
             10% {
                 opacity: 1;
             }
+
             90% {
                 opacity: 1;
             }
-            100% { 
+
+            100% {
                 transform: translateY(-300px) translateX(100px);
                 opacity: 0;
             }
@@ -301,20 +322,27 @@
         }
 
         body .grid-pattern {
-            background-image: 
+            background-image:
                 linear-gradient(rgba(102, 126, 234, 0.1) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(102, 126, 234, 0.1) 1px, transparent 1px);
         }
 
         body.dark-mode .grid-pattern {
-            background-image: 
+            background-image:
                 linear-gradient(rgba(167, 139, 250, 0.1) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(167, 139, 250, 0.1) 1px, transparent 1px);
         }
 
         @keyframes gridPulse {
-            0%, 100% { opacity: 0.1; }
-            50% { opacity: 0.2; }
+
+            0%,
+            100% {
+                opacity: 0.1;
+            }
+
+            50% {
+                opacity: 0.2;
+            }
         }
 
         .scroll-progress {
@@ -386,7 +414,9 @@
         }
 
         @keyframes slideDown {
-            to { opacity: 1; }
+            to {
+                opacity: 1;
+            }
         }
 
         .nav-container {
@@ -547,8 +577,8 @@
             transform: translateY(100px) rotateX(-90deg) scale(0.5);
             animation: letterAppear 1s forwards cubic-bezier(0.215, 0.61, 0.355, 1);
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-                        color 0.4s ease,
-                        text-shadow 0.4s ease;
+                color 0.4s ease,
+                text-shadow 0.4s ease;
         }
 
         body .magnetic-letter.first-name {
@@ -846,13 +876,23 @@
         }
 
         @keyframes rotateRing1 {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         @keyframes rotateRing2 {
-            from { transform: rotate(360deg); }
-            to { transform: rotate(0deg); }
+            from {
+                transform: rotate(360deg);
+            }
+
+            to {
+                transform: rotate(0deg);
+            }
         }
 
         .photo {
@@ -1177,12 +1217,29 @@
             overflow: hidden;
         }
 
-        .gradient-1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-        .gradient-2 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
-        .gradient-3 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
-        .gradient-4 { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
-        .gradient-5 { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
-        .gradient-6 { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+        .gradient-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .gradient-2 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .gradient-3 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .gradient-4 {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .gradient-5 {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .gradient-6 {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
 
         .project-content {
             padding: 40px;
@@ -1451,8 +1508,15 @@
         }
 
         @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            25% { transform: scale(1.2); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1.2);
+            }
         }
 
         @media (max-width: 1024px) {
@@ -1508,7 +1572,9 @@
         }
 
         @keyframes fadeIn {
-            to { opacity: 1; }
+            to {
+                opacity: 1;
+            }
         }
 
         .slide-up {
@@ -1548,8 +1614,21 @@
         body.dark-mode::-webkit-scrollbar-thumb:hover {
             background: rgba(167, 139, 250, 0.5);
         }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(40px) scale(0.95);
+            transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1), transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+            will-change: opacity, transform;
+        }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
     </style>
 </head>
+
 <body>
     <div class="scroll-progress" id="scrollProgress"></div>
 
@@ -1586,7 +1665,7 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <div class="welcome-badge">✨ Welcome to my portfolio</div>
-            
+
             <div class="name-container">
                 <div class="name-line" id="firstName"></div>
                 <div class="name-line" id="lastName"></div>
@@ -1607,7 +1686,8 @@
             <span class="section-badge">👨‍💻 About Me</span>
             <h2 class="section-title">Who I Am</h2>
             <p class="section-description">
-                I'm a passionate developer who loves to create beautiful, functional, and user-friendly digital experiences with expertise in modern web technologies.
+                I'm a passionate developer who loves to create beautiful, functional, and user-friendly digital
+                experiences with expertise in modern web technologies.
             </p>
         </div>
 
@@ -1616,7 +1696,8 @@
                 <div class="photo-ring-1"></div>
                 <div class="photo-ring-2"></div>
                 <div class="photo">
-                    <img src="https://media.licdn.com/dms/image/v2/D4D03AQEmY3oJq9Bb9Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1725457176184?e=1772668800&v=beta&t=pCPd_smBf870ubbdonuUrPCs3E1BUJQrkRAmMrUX-9o">
+                    <img
+                        src="https://media.licdn.com/dms/image/v2/D4D03AQEmY3oJq9Bb9Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1725457176184?e=1772668800&v=beta&t=pCPd_smBf870ubbdonuUrPCs3E1BUJQrkRAmMrUX-9o">
                 </div>
             </div>
         </div>
@@ -1648,10 +1729,13 @@
             <div class="journey-text">
                 <h3>My Journey</h3>
                 <p>
-                    From a curious beginner to a professional developer, my journey has been filled with learning, creating, and pushing boundaries. I specialize in building modern web applications that not only look great but also provide exceptional user experiences.
+                    From a curious beginner to a professional developer, my journey has been filled with learning,
+                    creating, and pushing boundaries. I specialize in building modern web applications that not only
+                    look great but also provide exceptional user experiences.
                 </p>
                 <p>
-                    When I'm not coding, you'll find me exploring new design trends, experimenting with motion graphics, or contributing to open-source projects.
+                    When I'm not coding, you'll find me exploring new design trends, experimenting with motion graphics,
+                    or contributing to open-source projects.
                 </p>
             </div>
             <div class="skill-bars">
@@ -1752,7 +1836,8 @@
                 <div class="project-image gradient-1">🛒</div>
                 <div class="project-content">
                     <div class="project-title">E-Commerce Platform</div>
-                    <div class="project-description">A fully responsive e-commerce platform with advanced filtering, cart management, and payment integration.</div>
+                    <div class="project-description">A fully responsive e-commerce platform with advanced filtering,
+                        cart management, and payment integration.</div>
                     <div class="project-tags">
                         <span class="tag">React</span>
                         <span class="tag">Next.js</span>
@@ -1765,7 +1850,8 @@
                 <div class="project-image gradient-2">🤖</div>
                 <div class="project-content">
                     <div class="project-title">AI Dashboard</div>
-                    <div class="project-description">Interactive dashboard for visualizing AI-powered analytics with real-time data updates and beautiful charts.</div>
+                    <div class="project-description">Interactive dashboard for visualizing AI-powered analytics with
+                        real-time data updates and beautiful charts.</div>
                     <div class="project-tags">
                         <span class="tag">TypeScript</span>
                         <span class="tag">React</span>
@@ -1778,7 +1864,8 @@
                 <div class="project-image gradient-3">🎨</div>
                 <div class="project-content">
                     <div class="project-title">Portfolio Studio</div>
-                    <div class="project-description">A creative portfolio builder with drag-and-drop interface and customizable templates for creators.</div>
+                    <div class="project-description">A creative portfolio builder with drag-and-drop interface and
+                        customizable templates for creators.</div>
                     <div class="project-tags">
                         <span class="tag">React</span>
                         <span class="tag">Motion</span>
@@ -1791,7 +1878,8 @@
                 <div class="project-image gradient-4">✅</div>
                 <div class="project-content">
                     <div class="project-title">Task Management App</div>
-                    <div class="project-description">Collaborative task management tool with real-time updates, team chat, and project timelines.</div>
+                    <div class="project-description">Collaborative task management tool with real-time updates, team
+                        chat, and project timelines.</div>
                     <div class="project-tags">
                         <span class="tag">React</span>
                         <span class="tag">Firebase</span>
@@ -1804,7 +1892,8 @@
                 <div class="project-image gradient-5">🌤️</div>
                 <div class="project-content">
                     <div class="project-title">Weather Forecast</div>
-                    <div class="project-description">Beautiful weather application with animated backgrounds, detailed forecasts, and location tracking.</div>
+                    <div class="project-description">Beautiful weather application with animated backgrounds, detailed
+                        forecasts, and location tracking.</div>
                     <div class="project-tags">
                         <span class="tag">React</span>
                         <span class="tag">API</span>
@@ -1817,7 +1906,8 @@
                 <div class="project-image gradient-6">📊</div>
                 <div class="project-content">
                     <div class="project-title">Social Media Dashboard</div>
-                    <div class="project-description">Unified dashboard for managing multiple social media accounts with analytics and scheduling.</div>
+                    <div class="project-description">Unified dashboard for managing multiple social media accounts with
+                        analytics and scheduling.</div>
                     <div class="project-tags">
                         <span class="tag">Next.js</span>
                         <span class="tag">OAuth</span>
@@ -1829,7 +1919,8 @@
         </div>
 
         <div style="text-align: center;">
-            <a href="https://github.com/saniyasv" target="_blank" class="btn btn-secondary" style="display: inline-block;">
+            <a href="https://github.com/saniyasv" target="_blank" class="btn btn-secondary"
+                style="display: inline-block;">
                 💻 View More on GitHub →
             </a>
         </div>
@@ -1909,7 +2000,7 @@
 
         themeToggle.addEventListener('click', () => {
             body.classList.toggle('dark-mode');
-            
+
             if (body.classList.contains('dark-mode')) {
                 themeIcon.textContent = '☀️';
                 localStorage.setItem('theme', 'dark');
@@ -1945,10 +2036,10 @@
             const now = Date.now();
             velocityX = e.clientX - lastMouseX;
             velocityY = e.clientY - lastMouseY;
-            
+
             mouseX = e.clientX;
             mouseY = e.clientY;
-            
+
             lastMouseX = mouseX;
             lastMouseY = mouseY;
 
@@ -1974,17 +2065,17 @@
         function createCursorTrail(x, y, vx, vy) {
             const trail = document.createElement('div');
             trail.className = 'cursor-trail';
-            
+
             const speed = Math.min(Math.sqrt(vx * vx + vy * vy), 50);
             const size = 4 + (speed / 15);
-            
+
             trail.style.width = size + 'px';
             trail.style.height = size + 'px';
             trail.style.left = x + 'px';
             trail.style.top = y + 'px';
-            
+
             trail.style.opacity = Math.min(0.6 + (speed / 100), 0.8);
-            
+
             document.body.appendChild(trail);
 
             setTimeout(() => {
@@ -2003,7 +2094,7 @@
             const ringSpeed = 0.15;
             const dx = mouseX - ringX;
             const dy = mouseY - ringY;
-            
+
             ringX += dx * ringSpeed + velocityX * 0.05;
             ringY += dy * ringSpeed + velocityY * 0.05;
 
@@ -2037,12 +2128,12 @@
         const firstName = 'SANIYA';
         const lastName = 'SUSAN';
         const nameGlow = document.getElementById('nameGlow');
-        
+
         let allLetters = [];
 
         function createMagneticLetters(text, container, startDelay, className) {
             const letters = [];
-            
+
             text.split('').forEach((letter, index) => {
                 const span = document.createElement('span');
                 span.className = `magnetic-letter ${className}`;
@@ -2052,7 +2143,7 @@
                 letters.push(span);
                 container.appendChild(span);
             });
-            
+
             return letters;
         }
 
@@ -2065,12 +2156,12 @@
             trail.className = 'name-trail';
             trail.style.left = x + 'px';
             trail.style.top = y + 'px';
-            
+
             if (color) {
                 trail.style.background = color;
                 trail.style.boxShadow = `0 0 15px ${color}`;
             }
-            
+
             document.body.appendChild(trail);
 
             setTimeout(() => {
@@ -2090,73 +2181,70 @@
                 const rect = letter.getBoundingClientRect();
                 const centerX = rect.left + rect.width / 2;
                 const centerY = rect.top + rect.height / 2;
-                
+
                 const distanceX = e.clientX - centerX;
                 const distanceY = e.clientY - centerY;
                 const distance = Math.sqrt(distanceX ** 2 + distanceY ** 2);
-                
+
                 if (distance < minDistance) {
                     minDistance = distance;
                     closestLetter = letter;
                 }
-                
+
                 letter.classList.remove('hovered');
                 letter.style.setProperty('--tx', '0px');
                 letter.style.setProperty('--ty', '0px');
             });
 
             const magneticRadius = 120;
-            
+
             allLetters.forEach(letter => {
                 const rect = letter.getBoundingClientRect();
                 const centerX = rect.left + rect.width / 2;
                 const centerY = rect.top + rect.height / 2;
-                
+
                 const distanceX = e.clientX - centerX;
                 const distanceY = e.clientY - centerY;
                 const distance = Math.sqrt(distanceX ** 2 + distanceY ** 2);
 
                 if (distance < magneticRadius) {
                     isOverName = true;
-                    
+
                     const strength = 1 - (distance / magneticRadius);
                     const maxPull = 15;
-                    
+
                     const angle = Math.atan2(distanceY, distanceX);
                     const pullX = Math.cos(angle) * strength * maxPull;
                     const pullY = Math.sin(angle) * strength * maxPull;
-                    
+
                     letter.classList.add('hovered');
                     letter.style.setProperty('--tx', `${pullX}px`);
                     letter.style.setProperty('--ty', `${pullY}px`);
                 }
             });
-
-<h1>Saniya Susan Varkey</h1>
-<p>Aspiring Software Engineer</p>
             if (isOverName && closestLetter) {
                 const rect = closestLetter.getBoundingClientRect();
                 const centerX = rect.left + rect.width / 2;
                 const centerY = rect.top + rect.height / 2;
-                
+
                 nameGlow.style.left = centerX + 'px';
                 nameGlow.style.top = centerY + 'px';
                 nameGlow.classList.add('active');
-                
+
                 if (firstNameLetters.includes(closestLetter)) {
                     nameGlow.style.background = 'radial-gradient(circle, rgba(102, 126, 234, 0.3) 0%, transparent 70%)';
                 } else {
                     nameGlow.style.background = 'radial-gradient(circle, rgba(240, 147, 251, 0.3) 0%, transparent 70%)';
                 }
-                
+
                 if (!isMouseOverName) {
                     isMouseOverName = true;
                     nameTrailInterval = setInterval(() => {
                         createNameTrail(
                             e.clientX + (Math.random() - 0.5) * 30,
                             e.clientY + (Math.random() - 0.5) * 30,
-                            firstNameLetters.includes(closestLetter) 
-                                ? 'rgba(102, 126, 234, 0.3)' 
+                            firstNameLetters.includes(closestLetter)
+                                ? 'rgba(102, 126, 234, 0.3)'
                                 : 'rgba(240, 147, 251, 0.3)'
                         );
                     }, 30);
@@ -2173,7 +2261,7 @@
         let nameHoverTimeout;
         document.addEventListener('mousemove', () => {
             clearTimeout(nameHoverTimeout);
-            
+
             nameHoverTimeout = setTimeout(() => {
                 allLetters.forEach(letter => {
                     letter.classList.remove('hovered');
@@ -2215,15 +2303,36 @@
 
         skillBars.forEach(bar => observer.observe(bar));
 
-           document.getElementById('contactForm').addEventListener('submit', (e) => {
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
             e.preventDefault();
             alert('✨ Thank you for your message! I will get back to you soon.');
             e.target.reset();
         });
+
+        const animateElements = document.querySelectorAll('.stat-card, .skill-card, .project-card, .section-title, .section-description, .contact-card, .journey-content');
+
+        animateElements.forEach((el, index) => {
+            el.classList.add('animate-on-scroll');
+        });
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Stagger the transitions slightly if multiple elements reveal at once
+                    const delay = (Array.from(entry.target.parentElement.children).indexOf(entry.target) % 4) * 0.15;
+                    entry.target.style.transitionDelay = `${delay}s`;
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+        animateElements.forEach(el => revealObserver.observe(el));
 
         console.log('%c🚀 Portfolio by Saniya Susan', 'font-size: 20px; font-weight: bold; color: #667eea;');
         console.log('%c✨ Designed & Developed with passion', 'font-size: 14px; color: #f093fb;');
         console.log('%c🔮 Professional magnetic name animation with trail effects activated!', 'font-size: 12px; color: #764ba2;');
     </script>
 </body>
+
 </html>
